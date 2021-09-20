@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="icon"
+        href="data:image/png;base64,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">
+    <link href="Resources/font awesome/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Linked in</title>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header_left">
+
+            <i class="fab fa-linkedin fa-2x logo" style="color: #0a66c2;"></i>
+            <div class="header_search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search" style="width: 250px;">
+            </div>
+        </div>
+        <div class="header_right">
+            <div class="headerOptions">
+                <i class="fas fa-home headerOptions_icon"></i>
+                <h3>Home</h3>
+            </div>
+            <div class="headerOptions">
+                <i class="fas fa-user-friends headerOptions_icon"></i>
+                <h3>My Network</h3>
+            </div>
+            <div class="headerOptions">
+                <i class="fas fa-briefcase headerOptions_icon"></i>
+                <h3>Jobs</h3>
+            </div>
+            <div class="headerOptions">
+                <i class="fas fa-comment-dots headerOptions_icon"></i>
+                <h3>Messaging</h3>
+            </div>
+            <div class="headerOptions">
+                <i class="fas fa-bell headerOptions_icon"></i>
+                <h3>Notifications</h3>
+            </div>
+            <div class="headerOptions">
+                <!-- <i class="fas fa-user-circle headerOptions_icon"></i> -->
+                <img src="Resources/PP.png" class="profile_pic_header" alt="">
+                <h3>Me</h3>
+            </div>
+        </div>
+    </header>
+    <!-- Header ends -->
+
+    <!-- Main Body  -->
+    <div class="body_main">
+        <!-- Side bar -->
+        <section>
+            <div class="sidebar">
+                <div class="sidebar_top">
+                    <img src="Resources/linkedIn cover.png">
+                    <img src="Resources/PP.png" class="profile_pic"
+                        style="width: 70px; height: 70px; border-radius: 50%;" alt="">
+                    <h2>Afhaam k</h2>
+                    <h4>mr.afhaam@gmail.com</h4>
+                </div>
+                <div class="sidebar_mid">
+                    <div class="sidebar_stats">
+                        <p>Who Viewed You</p>
+                        <p class="sidebar_statNumber">1,843</p>
+                    </div>
+                    <div class="sidebar_stats">
+                        <p>Views on post</p>
+                        <p class="sidebar_statNumber">1,983</p>
+                    </div>
+                </div>
+                <div class="sidebar_bottom">
+                    <p>Recent</p>
+                    <div class="sidebar_recent">
+                        <span class="sidebar_hash">#</span>
+                        <p>Mern Stack Developer</p>
+                    </div>
+                    <div class="sidebar_recent">
+                        <span class="sidebar_hash">#</span>
+                        <p>programming</p>
+                    </div>
+                    <div class="sidebar_recent">
+                        <span class="sidebar_hash">#</span>
+                        <p>Problem Solving</p>
+                    </div>
+                    <div class="sidebar_recent">
+                        <span class="sidebar_hash">#</span>
+                        <p>Android Developer</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Side bar ends -->
+
+
+        <!-- Feed Part Starts -->
+        <section>
+            <div class="feed" style="width: 35em;">
+                <div class="inputContainer">
+                    <div class="feed_inputTop">
+                        <div class="feed_avatar">
+                            <!-- <i class="fas fa-user-circle avatar_icon" style="padding: 0 10px;"></i> -->
+                            <img src="Resources/PP.png" class="profile_pic" alt="">
+                        </div>
+                        <div class="feed_input">
+
+                            <form class="feed_input_form">
+                                <input type="text" placeholder="Start a Post">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="feed_inputOptions">
+                        <div class="inputOptions">
+                            <i class="fas fa-image" style="color: #70b5f9;"></i>
+                            <h4>Photo</h4>
+                        </div>
+                        <div class="inputOptions">
+                            <i class="fab fa-youtube" style="color: #7fc15e;"></i>
+                            <h4>Video</h4>
+                        </div>
+                        <div class="inputOptions">
+                            <i class="fas fa-calendar-week" style="color: #e7a33e;"></i>
+                            <h4>Events</h4>
+                        </div>
+                        <div class="inputOptions">
+                            <i class="fas fa-newspaper " style="color: #fc9295;"></i>
+                            <h4>Write Article</h4>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Post Starts -->
+                <section class="postMain">
+                    <div class="post">
+                        <div class="postHeader">
+                            <!-- <i class="fas fa-user-circle avatar_icon" style="padding: 0 10px;"></i> -->
+                            <img src="Resources/cr logo.jpg" class="profile_pic_cr" alt="">
+                            <div class="postInfo">
+                                <h2>Crossroads</h2>
+                                <p>1,451 followers</p>
+                            </div>
+                        </div>
+                        <div class="postBody">
+                            <p>We are Hiring..
+                                <br>
+                                <br>
+                                Apply Now..
+                                <br>
+                                <br>
+                            </p>
+                            <img src="Resources/crossroads image.jpg" style="height: 520px; width: 550px;"
+                                class="CrImage" alt="">
+                        </div>
+                        <div class="postFooter">
+                            <div class="footerOptions">
+                                <i class="fas fa-thumbs-up"></i>
+                                <h4>Like</h4>
+                            </div>
+                            <div class="footerOptions">
+                                <i class="far fa-comment-dots"></i>
+                                <h4>Comment</h4>
+                            </div>
+                            <div class="footerOptions">
+                                <i class="fas fa-share"></i>
+                                <h4>Share</h4>
+                            </div>
+                            <div class="footerOptions">
+                                <i class="fas fa-paper-plane"></i>
+                                <h4>Send</h4>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="post">
+                        <div class="postHeader">
+                            <!-- <i class="fas fa-user-circle avatar_icon" style="padding: 0 10px;"></i> -->
+                            <img src="Resources/cr logo.jpg" class="profile_pic_cr" alt="">
+                            <div class="postInfo">
+                                <h2>Crossroads</h2>
+                                <p>1,451 followers</p>
+                            </div>
+                        </div>
+                        <div class="postBody">
+                            <p>We are Hiring..
+                                <br>
+                                <br>
+                                Apply Now..
+                                <br>
+                                <br>
+                            </p>
+                            <img src="Resources/cr image2.jpg" style="height: 520px; width: 550px;" class="CrImage"
+                                alt="">
+                        </div>
+                        <div class="postFooter">
+                            <div class="footerOptions">
+                                <i class="fas fa-thumbs-up"></i>
+                                <h4>Like</h4>
+                            </div>
+                            <div class="footerOptions">
+                                <i class="far fa-comment-dots"></i>
+                                <h4>Comment</h4>
+                            </div>
+                            <div class="footerOptions">
+                                <i class="fas fa-share"></i>
+                                <h4>Share</h4>
+                            </div>
+                            <div class="footerOptions">
+                                <i class="fas fa-paper-plane"></i>
+                                <h4>Send</h4>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="post">
+
+                        <div class="postHeader">
+                            <img style="border-radius: 50%;"
+                                src="https://media-exp1.licdn.com/dms/image/C4E03AQH-7hRQSVkPeA/profile-displayphoto-shrink_100_100/0/1601581770417?e=1637193600&v=beta&t=eIeg6laGUjtJyePEE2mVtOzCroneQcDvpD1gRRp419k"
+                                class="profile_pic_cr" alt="">
+                            <div class="postInfo">
+                                <h2>Nikhil Kilivayil</h2>
+                                <p>Founder of Packapeer academy pvt Ltd</p>
+                            </div>
+                        </div>
+                        <div class="postBody">
+                            <p>3 simple steps to grow your company <br>
+
+                                Step 1: Hire talented people <br>
+
+                                Step 2: Pay as much as you can <br>
+
+                                Step 3: Repeat steps 1 & 2 <br>
+
+                                If you wonder why your company doesn't grow, most probably you are looking for cheap
+                                talent <br>
+
+                                I have been this road many years looking for cheap talent as most founders do.<br>
+
+                                Finally realised that "*cheap*" and "*talent*" never goes hand in hand.<br>
+
+                                So, if you want to grow your company do these 3 simple steps. Remember, it's easier said
+                                than done.<br>
+
+                                Crossroads is expanding its Calicut operation from 50 seats to 300 seats office at
+                                Kinfra Industrial Park Kozhikode. All credits goes to my team.<br>
+
+                                Long way to go! <br>
+
+                                Received letter of intent for new 10000 sq ft office space at Kinfra SDF from the
+                                honourable industrial minister of Kerala, Mr. P Rajeev in the presence of MLA Hameed
+                                Master and MP Samadani.<br>
+
+                            </p>
+                            <img src="https://media-exp1.licdn.com/dms/image/C4D22AQHA9rRVz06XtQ/feedshare-shrink_2048_1536/0/1631686223719?e=1634774400&v=beta&t=WB51QTUv48gX_LJpM6vrpWs2Zhdk7VTnsLbADQLGmWY"
+                                style="height: 520px; width: 550px;" class="CrImage" alt="">
+                        </div>
+                        <div class="postFooter">
+                            <div class="footerOptions">
+                                <i class="fas fa-thumbs-up"></i>
+                                <h4>Like</h4>
+                            </div>
+                            <div class="footerOptions">
+                                <i class="far fa-comment-dots"></i>
+                                <h4>Comment</h4>
+                            </div>
+                            <div class="footerOptions">
+                                <i class="fas fa-share"></i>
+                                <h4>Share</h4>
+                            </div>
+                            <div class="footerOptions">
+                                <i class="fas fa-paper-plane"></i>
+                                <h4>Send</h4>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="post">
+
+                        <div class="postHeader">
+                            <i class="fas fa-user-circle avatar_icon" style="padding: 0 10px;"></i>
+                            <div class="postInfo">
+                                <h2> Muhammed Junaid </h2>
+                                <p>Job Description</p>
+                            </div>
+                        </div>
+                        <div class="postBody">
+                            <p>HI there.</p>
+                        </div>
+                        <div class="postFooter">
+                            <div class="footerOptions">
+                                <i class="fas fa-thumbs-up"></i>
+                                <h4>Like</h4>
+                            </div>
+                            <div class="footerOptions">
+                                <i class="far fa-comment-dots"></i>
+                                <h4>Comment</h4>
+                            </div>
+                            <div class="footerOptions">
+                                <i class="fas fa-share"></i>
+                                <h4>Share</h4>
+                            </div>
+                            <div class="footerOptions">
+                                <i class="fas fa-paper-plane"></i>
+                                <h4>Send</h4>
+                            </div>
+
+                        </div>
+                </section>
+
+                <!-- Post Ends -->
+
+            </div>
+        </section>
+        <!-- Feed Part ends -->
+        <!-- News Section starts -->
+        <section>
+            <div class="news" style="width: 18em;">
+                <div class="newsHeader">
+                    <h2>LinkedIn News</h2>
+                    <i class="fas fa-info-circle" style="color: gray;"></i>
+                </div>
+                <div class="newsArticle">
+                    <div class="articleLeft">
+                        <i class="fas fa-circle"></i>
+                    </div>
+                    <div class="articleRight">
+                        <h4>No Indian University in Top 300</h4>
+                        <p>1d ago . 2,099 readers</p>
+                    </div>
+                </div>
+                <div class="newsArticle">
+                    <div class="articleLeft">
+                        <i class="fas fa-circle "></i>
+                    </div>
+                    <div class="articleRight">
+                        <h4>Does attitude trump skill? </h4>
+                        <p>4d ago . 18,209 readers</p>
+                    </div>
+                </div>
+                <div class="newsArticle">
+                    <div class="articleLeft">
+                        <i class="fas fa-circle"></i>
+                    </div>
+                    <div class="articleRight">
+                        <h4>Is Thirsday the new balack?</h4>
+                        <p>5d ago . 121,306 readers</p>
+                    </div>
+                </div>
+                <div class="newsArticle">
+                    <div class="articleLeft">
+                        <i class="fas fa-circle"></i>
+                    </div>
+                    <div class="articleRight">
+                        <h4>Bitcoin's rocky El salvador debut</h4>
+                        <p>5d ago . 55,062 readers</p>
+                    </div>
+                </div>
+                <p style="color: gray; padding-left: 10px;">Show more..</p>
+            </div>
+
+
+            <div class="TodayTop" style="width: 18em;">
+                <div class="newsHeader">
+                    <h2>Today's top courses </h2>
+                    <i class="fas fa-info-circle" style="color: gray;"></i>
+                </div>
+                <div class="newsArticle">
+                    <div class="articleLeft">
+                        <i class="fas fa-circle"></i>
+                    </div>
+                    <div class="articleRight">
+                        <h4>Rock Your LinkedIn Profile</h4>
+                        <p>Lauren Jolda</p>
+                    </div>
+                </div>
+                <div class="newsArticle">
+                    <div class="articleLeft">
+                        <i class="fas fa-circle "></i>
+                    </div>
+                    <div class="articleRight">
+                        <h4>HTML Essential Training</h4>
+                        <p>Jen Simmons</p>
+                    </div>
+                </div>
+                <div class="newsArticle">
+                    <div class="articleLeft">
+                        <i class="fas fa-circle"></i>
+                    </div>
+                    <div class="articleRight">
+                        <h4>Learning Data Analytics</h4>
+                        <p>Robin Hunt</p>
+                    </div>
+                </div>
+                <div class="newsArticle">
+                    <div class="articleLeft">
+                        <i class="fas fa-circle"></i>
+                    </div>
+                    <div class="articleRight">
+                        <h4>CSS Animation</h4>
+                        <p>Val Head</p>
+                    </div>
+                </div>
+                <p style="color: gray; padding-left: 10px;">Show more..</p>
+            </div>
+            <div class="footer">
+                <div class="pic">
+                    <img src="https://static-exp1.licdn.com/scds/common/u/images/promo/ads/li_evergreen_jobs_ad_300x250_v1.jpg"
+                        alt="">
+                </div>
+                <div class="footer_text">
+
+
+                    <p>
+                        About &nbsp;
+                        Accessibility&nbsp;
+                        Help Center <br><br>
+
+                        &nbsp; Privacy & Terms &nbsp;
+                        Ad Choices <br><br>
+                        Advertising &nbsp;
+
+                        Business Services <br><br>
+                        &nbsp; Get the LinkedIn app &nbsp;
+                        More <br><br>
+                    </p>
+                </div>
+                <div class="rights" style="display: flex;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 14" data-supported-dps="56x14"
+                        fill="currentColor" class="mercado-match" width="56" height="14" focusable="false">
+                        <g>
+                            <path class="background-mercado"
+                                d="M22.1 8.2l3.09 3.8h-2.44L20 8.51V12h-2V2h2v5.88L22.54 5h2.55zm-8-3.4A2.71 2.71 0 0011.89 6V5H10v7h2V8.73a1.74 1.74 0 011.66-1.93C14.82 6.8 15 7.94 15 8.73V12h2V8.29c0-2.2-.73-3.49-2.86-3.49zM32 8.66a4.22 4.22 0 010 .44h-5.25v.07a1.79 1.79 0 001.83 1.43 2.51 2.51 0 001.84-.69l1.33 1a4.31 4.31 0 01-3.25 1.29 3.49 3.49 0 01-3.7-3.75 3.58 3.58 0 013.76-3.65C30.44 4.8 32 6.13 32 8.66zm-1.86-.86a1.46 1.46 0 00-1.59-1.4 1.64 1.64 0 00-1.8 1.4zM2 2H0v10h6v-2H2zm36 0h2v10h-1.89v-.7a2.44 2.44 0 01-2 .9 3.41 3.41 0 01-3.31-3.7 3.36 3.36 0 013.3-3.7 2.62 2.62 0 011.9.7zm.15 6.5a1.63 1.63 0 00-1.62-1.85A1.76 1.76 0 0034.9 8.5a1.76 1.76 0 001.63 1.85 1.63 1.63 0 001.62-1.85zM8 1.8A1.27 1.27 0 006.75 3a1.25 1.25 0 002.5 0A1.27 1.27 0 008 1.8zM7 12h2V5H7zM56 1v12a1 1 0 01-1 1H43a1 1 0 01-1-1V1a1 1 0 011-1h12a1 1 0 011 1zM46 5h-2v7h2zm.25-2a1.25 1.25 0 00-2.5 0 1.25 1.25 0 002.5 0zM54 8.29c0-2.2-.73-3.49-2.86-3.49A2.71 2.71 0 0048.89 6V5H47v7h2V8.73a1.74 1.74 0 011.66-1.93C51.82 6.8 52 7.94 52 8.73V12h2z">
+                            </path>
+                        </g>
+                    </svg>
+                    <p>
+                        LinkedIn Corporation © 2021
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- News Section Ends -->
+    </div>
+    <!-- Main Body ends -->
+
+</body>
+
+</html>
